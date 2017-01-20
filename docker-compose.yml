@@ -1,0 +1,37 @@
+mysql:
+  image:  mysql:5.5
+  volumes:
+    - ~/data/mysql/camaleon:/var/lib/mysql
+    - .:/home/camaleon
+  environment:
+    - MYSQL_ROOT_PASSWORD=foo
+  ports:
+    - "3306"
+
+web:
+  build: .
+  volumes:
+    - .:/home/app
+  environment:
+    - CRON_UP=true
+    - WEB_UP=true
+    - WEB_CONCURRENCY=1
+    - DEV_BUILD=true
+    - DOCKER_HOST_PORT=camaleon_web_1:4011
+    - CAMALEON_DEFAULT_HOSTNAME=camaleon_web_1
+  extra_hosts:
+    # docker-compose up does not set this for us on the web container
+    # force it for app/services/campaigns/customizable_text.rb
+    - "camaleon_web_1:127.0.0.1"
+  ports:
+    - "4011:4011"
+  links:
+    - mysql
+    - redis
+
+redis:
+  image: redis:3.0
+  volumes:
+    - ~/data/redis/camaleon:/data
+  ports:
+    - "6379"

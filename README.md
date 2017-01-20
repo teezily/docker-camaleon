@@ -1,2 +1,2 @@
 # docker-radiant
-A docker container running radiantCMS
+A docker container running CamaleonCMS
