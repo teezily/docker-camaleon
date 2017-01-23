@@ -9,6 +9,6 @@ EXPOSE 80
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-RUN     /docker_script/install_camaleon.sh
-
-ADD . /home/app
+COPY Gemfile* /home/app/
+RUN bundle install
+COPY . /home/app

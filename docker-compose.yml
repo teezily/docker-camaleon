@@ -18,11 +18,8 @@ web:
     - WEB_CONCURRENCY=1
     - DEV_BUILD=true
     - DOCKER_HOST_PORT=camaleon_web_1:4011
-    - CAMALEON_DEFAULT_HOSTNAME=camaleon_web_1
-  extra_hosts:
-    # docker-compose up does not set this for us on the web container
-    # force it for app/services/campaigns/customizable_text.rb
-    - "camaleon_web_1:127.0.0.1"
+    - TEEZILY_DEFAULT_HOSTNAME=camaleon_web_1
+
   ports:
     - "4011:4011"
   links:
