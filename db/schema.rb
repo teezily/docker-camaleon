@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 20161215202255) do
     t.index ["objectid"], name: "index_metas_on_objectid", using: :btree
   end
 
+  create_table "plugins_attacks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "path"
+    t.string   "browser_key"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.index ["browser_key"], name: "index_plugins_attacks_on_browser_key", using: :btree
+    t.index ["path"], name: "index_plugins_attacks_on_path", using: :btree
+    t.index ["site_id"], name: "index_plugins_attacks_on_site_id", using: :btree
+  end
+
   create_table "plugins_contact_forms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "site_id"
     t.integer  "count"

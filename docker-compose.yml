@@ -17,8 +17,8 @@ web:
     - WEB_UP=true
     - WEB_CONCURRENCY=1
     - DEV_BUILD=true
-    - DOCKER_HOST_PORT=camaleon_web_1:4011
-    - TEEZILY_DEFAULT_HOSTNAME=camaleon_web_1
+    - DOCKER_HOST_PORT=dockercamaleon_web_1:4011
+    - CAMALEON_DEFAULT_HOSTNAME=dockercamaleon_web_1
 
   ports:
     - "4011:4011"
