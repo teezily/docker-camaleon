@@ -1,0 +1,34 @@
+mysql:
+  image:  mysql:5.5
+  volumes:
+    - ~/data/mysql/camaleon:/var/lib/mysql
+    - .:/home/camaleon
+  environment:
+    - MYSQL_ROOT_PASSWORD=foo
+  ports:
+    - "3306"
+
+web:
+  build: .
+  volumes:
+    - .:/home/app
+  environment:
+    - CRON_UP=true
+    - WEB_UP=true
+    - WEB_CONCURRENCY=1
+    - DEV_BUILD=true
+    - DOCKER_HOST_PORT=dockercamaleon_web_1:4011
+    - CAMALEON_DEFAULT_HOSTNAME=dockercamaleon_web_1
+
+  ports:
+    - "4011:4011"
+  links:
+    - mysql
+    - redis
+
+redis:
+  image: redis:3.0
+  volumes:
+    - ~/data/redis/camaleon:/data
+  ports:
+    - "6379"

@@ -1,0 +1,6 @@
+docker-compose run web bundle exec rake db:migrate &
+docker-compose up
+
+# Use the following to get a debugger working within Rails;
+# (Note: when stopped, only the "web" container will shut down):
+#docker-compose run --service-ports web
