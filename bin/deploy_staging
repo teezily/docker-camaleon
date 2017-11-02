@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -t deploy@camaleon.staging-dokku.teezily.com 'camaleon/deploy.sh'
