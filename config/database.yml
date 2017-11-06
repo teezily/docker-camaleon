@@ -15,6 +15,10 @@ test:
   <<: *default
   database: <%= ENV['MYSQL_DATABASE_TEST'] || 'camaleon_test'
 
+staging:
+  <<: *default
+  database: <%= ENV['MYSQL_DATABASE_STAGING'] || 'camaleon_staging'
+
 production:
   <<: *default
   database: <%= ENV['MYSQL_DATABASE_DEV'] || 'camaleon_production'
