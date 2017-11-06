@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dokku": {
+      "predeploy": "/home/app/dokku/predeploy.sh",
+      "postdeploy": "/home/app/dokku/postdeploy.sh"
+    }
+  }
+}

@@ -17,9 +17,15 @@ test:
 
 staging:
   <<: *default
-  database:  <%= ENV['CAMALEON_MYSQL_DATABASE'] || 'camaleon_staging' %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  database:  <%= ENV['DATABASE_NAME'] || 'camaleon_staging' %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
-  database: <%= ENV['CAMALEON_MYSQL_DATABASE'] || 'camaleon_production' %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE_NAME'] || 'camaleon_production' %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
