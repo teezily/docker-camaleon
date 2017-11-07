@@ -16,18 +16,18 @@ test:
   database: <%= ENV['MYSQL_DATABASE_TEST'] || 'camaleon_test' %>
 
 staging:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
   host: <%= ENV['DATABASE_HOST'] %>
   database:  <%= ENV['DATABASE_NAME'] || 'camaleon_staging' %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
-staging:
-  <<: *default
-  database: <%= ENV['MYSQL_DATABASE_STAGING'] || 'camaleon_staging' %>
-
 production:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
   host: <%= ENV['DATABASE_HOST'] %>
   database: <%= ENV['DATABASE_NAME'] || 'camaleon_production' %>
   username: <%= ENV['DATABASE_USERNAME'] %>
