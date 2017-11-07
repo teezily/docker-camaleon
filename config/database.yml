@@ -24,7 +24,7 @@ staging:
 
 staging:
   <<: *default
-  database: <%= ENV['MYSQL_DATABASE_STAGING'] || 'camaleon_staging'
+  database: <%= ENV['MYSQL_DATABASE_STAGING'] || 'camaleon_staging' %>
 
 production:
   <<: *default
