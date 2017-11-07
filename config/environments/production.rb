@@ -81,6 +81,10 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  # ENV['HOST'] || www.camaleon_site_production_name once need to deploy in production
+  default_host = ENV['HOST']
+  default_url_options = default_host
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
