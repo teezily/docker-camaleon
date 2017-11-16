@@ -11,4 +11,5 @@ CMD ["/sbin/my_init"]
 
 COPY Gemfile* /home/app/
 RUN bundle install
+RUN rails generate camaleon_cms:install
 COPY . /home/app
