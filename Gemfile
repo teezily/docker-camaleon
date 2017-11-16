@@ -16,9 +16,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'camaleon_cms', github: 'owen2345/camaleon-cms'
+gem "camaleon_cms",  '>= 2.4.4.7'
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
-gem 'draper', github: 'audionerd/draper', branch: 'rails5'
+gem 'draper', '~> 3'
 gem 'bcrypt', '~>3.1.7'
 
 group :development, :test do

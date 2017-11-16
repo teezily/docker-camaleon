@@ -1,37 +1,4 @@
 GIT
-  remote: https://github.com/audionerd/draper.git
-  revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
-  branch: rails5
-  specs:
-    draper (2.1.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
-
-GIT
-  remote: https://github.com/owen2345/camaleon-cms.git
-  revision: 2c89452dccb668a1eca0c9f3af76a8bf5f80ef5e
-  specs:
-    camaleon_cms (2.4.3)
-      aws-sdk (~> 2)
-      bcrypt
-      breadcrumbs_on_rails
-      cama_contact_form (~> 0.0.16)
-      cama_meta_tag
-      cancancan (~> 1.10)
-      coffee-rails
-      draper (>= 1.3)
-      font-awesome-rails
-      jquery-rails
-      meta-tags (~> 2.0)
-      mini_magick
-      sass-rails
-      tinymce-rails (~> 4.3)
-      will_paginate
-      will_paginate-bootstrap
-
-GIT
   remote: https://github.com/rails/activemodel-serializers-xml
   revision: dd9c0acf26aab111ebc647cd8deb99ebc6946531
   specs:
@@ -81,23 +48,40 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    aws-sdk (2.7.0)
-      aws-sdk-resources (= 2.7.0)
-    aws-sdk-core (2.7.0)
+    aws-sdk (2.10.84)
+      aws-sdk-resources (= 2.10.84)
+    aws-sdk-core (2.10.84)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.7.0)
-      aws-sdk-core (= 2.7.0)
-    aws-sigv4 (1.0.0)
+    aws-sdk-resources (2.10.84)
+      aws-sdk-core (= 2.10.84)
+    aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (9.0.6)
-    cama_contact_form (0.0.18)
+    cama_contact_form (0.0.25)
       rails
-    cama_meta_tag (1.3)
+    cama_meta_tag (1.4)
       rails (>= 4.1.0)
-    cancancan (1.15.0)
+    camaleon_cms (2.4.4.7)
+      aws-sdk (~> 2)
+      bcrypt
+      breadcrumbs_on_rails
+      cama_contact_form (~> 0.0.16)
+      cama_meta_tag
+      cancancan (~> 2.0)
+      coffee-rails
+      draper (>= 1.3)
+      font-awesome-rails
+      jquery-rails
+      meta-tags (~> 2.0)
+      mini_magick
+      sass-rails (<= 5.0.6)
+      tinymce-rails (~> 4.3)
+      will_paginate
+      will_paginate-bootstrap
+    cancancan (2.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.2.x)
@@ -107,11 +91,17 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
     debug_inspector (0.0.2)
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.17)
-    font-awesome-rails (4.7.0.1)
-      railties (>= 3.2, < 5.1)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -130,13 +120,13 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    meta-tags (2.4.0)
-      actionpack (>= 3.2.0, <= 5.1.0)
+    meta-tags (2.6.0)
+      actionpack (>= 3.2.0, < 5.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_magick (4.6.0)
+    mini_magick (4.8.0)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -198,7 +188,7 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    tinymce-rails (4.5.2)
+    tinymce-rails (4.7.2)
       railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -215,7 +205,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    will_paginate (3.1.5)
+    will_paginate (3.1.6)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
 
@@ -226,9 +216,9 @@ DEPENDENCIES
   activemodel-serializers-xml!
   bcrypt (~> 3.1.7)
   byebug
-  camaleon_cms!
+  camaleon_cms (>= 2.4.4.7)
   coffee-rails (~> 4.2)
-  draper!
+  draper (~> 3)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
