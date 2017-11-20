@@ -13,4 +13,4 @@ COPY Gemfile* /home/app/
 RUN bundle install
 COPY . /home/app
 
-RUN /home/app/dokku/prepare_app.sh
+RUN /docker_script/prepare_app.sh
