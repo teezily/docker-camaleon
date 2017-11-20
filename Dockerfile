@@ -12,3 +12,5 @@ CMD ["/sbin/my_init"]
 COPY Gemfile* /home/app/
 RUN bundle install
 COPY . /home/app
+
+RUN /home/app/dokku/prepare_app.sh
