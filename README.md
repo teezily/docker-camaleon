@@ -1,8 +1,11 @@
-Docker-camaleon
+Docker-Camaleon
 ===============
 
-A docker container running CamaleonCMS http://camaleon.tuzitio.com/
-Used by Teezily's frontend as rack proxy in order to manage static pages: https://teezily.com/content will redirect to this project
+A docker container running [CamaleonCMS](http://camaleon.tuzitio.com/)
+
+It is used by Teezily's frontend as rack proxy in order to manage static pages.
+
+https://teezily.com/content will redirect to this project.
 
 ## Installation
 
